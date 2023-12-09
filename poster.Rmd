@@ -20,7 +20,6 @@ output:
     pandoc_args: --mathjax
     highlight: monochrome
     number_sections: false
-  pdf_document: default
 link-citations: true
 bibliography: packages.bib
 ---
@@ -122,6 +121,6 @@ knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
 3. Основные поставщики решений TI на российском рынке
     - Kasperskiy LAB
     - Positive Technologies
+    - Перспективный мониторинг
     - R-Vision
     - Security Vision
-    - Перспективный мониторинг
