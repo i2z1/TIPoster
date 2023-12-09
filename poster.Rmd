@@ -11,8 +11,8 @@ affiliation:
     address: ИКБЦТ, РТУ МИРЭА
 main_findings:
   - "Threat Intelligence"
-  - '![](https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches/images/MIREA_Gerb_Colour.png){.main_pic}'
-logoleft_name: '![](https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches/images/KBSP.png){.main-img-left}'
+  - '![](https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches23rx/images/MIREA_Gerb_Colour.png){.main_pic}'
+logoleft_name: '![](https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches23rx/images/KBSP.png){.main-img-left}'
 #logoright_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main-img-right}'
 output: 
   posterdown::posterdown_betterland:
