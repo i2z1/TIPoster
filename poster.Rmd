@@ -20,6 +20,7 @@ output:
     pandoc_args: --mathjax
     highlight: monochrome
     number_sections: false
+  pdf_document: default
 link-citations: true
 bibliography: packages.bib
 ---
