@@ -10,15 +10,15 @@ affiliation:
   - num: 1
     address: ИКБЦТ, РТУ МИРЭА
 main_findings:
-  - "Make **better posters** with RMarkdown + **posterdown**."
-  - '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main_pic}'
-logoleft_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png){.main-img-left}'
-logoright_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main-img-right}'
+  - "Threat Intelligence"
+  - '![](https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches/images/MIREA_Gerb_Colour.png){.main_pic}'
+logoleft_name: '![](https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches/images/KBSP.png){.main-img-left}'
+#logoright_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main-img-right}'
 output: 
   posterdown::posterdown_betterland:
     self_contained: false
     pandoc_args: --mathjax
-    highlight: haddock
+    highlight: monochrome
     number_sections: false
 link-citations: true
 bibliography: packages.bib
@@ -35,91 +35,92 @@ knitr::opts_chunk$set(results = 'asis',
 options(knitr.table.format = "html") 
 ```
 
-```{r myplot, include=FALSE}
-svg('myplot.svg')
-plot(iris$Sepal.Length, iris$Sepal.Width)
-dev.off()
-```
-
-## Задачи TI
-
-This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
-
 ```{r, include=FALSE}
 knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
 ```
 
+## Задачи TI
+
+1. При анализе собственной инфраструктуры и поиску IoC:
+    - TI используется в процессе разведки и сбора данных об уязвимостях и угрозах для получения максимально возможного количества информации о злоумышленниках
+    - В качестве аналитической базы знаний для обнаружения и обработке угроз, формированию рекомендаций по реагированию
+
+2. Для организации работы Security Operations Center (SOC):
+    - Повышение качества детектов СЗИ
+    - Ускорение принятия решений при разборе инцидентов ИБ благодаря контексту
+    - Приоритизация угроз и атак в зависимости от критичности индикаторов
+
+
 ## Индикатор компрометации
 
-1. Pick a template layout.
-2. Write/ create your poster content distraction free.
-3. Let posterdown do its thing!
+Объект или артефакт, обнаруженный в ИТ-инфраструктуре компании, наличие которого с высокой долей вероятности может свидетельствовать о готовящейся, совершающейся или уже осуществленной компьютерной атаке
 
-### Собрать -- Источники
+ - хэш-суммы файлов, их имена и расположение
+ - IP-адреса
+ - DNS-имена серверов в сети Интернет
+ - Конкретные URL
+ - Названия веток и ключей реестра Windows
 
-### Хранить -- Форматы
+## Сбор информации
 
- - YARA
- - SIGMA
+1. Песочницы
+    - Тестирование влияния ВПО и действий атакующих на специально подготовленных средах для выявления слабых точек системы
+    
+2. Ханипоты
+    - Подготовка заведомо уязвимой системы в качестве приманки для выявления инструментов и ТТР, которыми пользуются злоумышленники
+    
+3. Анализ тематических форумов (Darknet)
+    - Проникновение в закрытые источники, такие как Darknet веб-форумы для извлечения информации, которой делятся злоумышленники на “своих” ресурсах
+    
+4. Материалы расследований
+    - Обработка отчетов вендоров о проведенных расследованиях для извлечения информации об индикаторах, артефактах и ТТР атакующих. Также для определения отрасли по которой работают злоумышленники
+    
+5. PoC
+    - Уже готовые Proof of Concept материалы на известные CVE, которые можно найти в открытых источниках, например репозитории GitHub. С помощью PoC можно зафиксировать, какие параметры системы жертвы уязвимы и являются целевыми
 
+## Применение фидов
 
+1. Snort
+    - Защищает определённый сегмент локальной сети от внешних атак из интернета. Система Snort выполняет протоколирование, анализ, поиск по содержимому, а также широко используется для активного блокирования или пассивного обнаружения целого ряда нападений и зондирований
 
-### Распространить -- фиды
+2. YARA
+    - В роли инструмента выполняет сигнатурный анализ на основе формальных YARA-правил. В них содержатся индикаторы компрометации для разных типов вредоносного ПО. Основная их задача — определять переменные в шаблонах, найденных в образце вредоносного ПО. При полном или частичном совпадении (в зависимости от конкретного правила) этот алгоритм может быть использован для успешной идентификации ВПО
+    
+3. SIGMA
+    - "Sigma для логов — это как Snort для трафика или Yara для файлов". Специально созданный YAML файл, в котором указывается соответсвие используемых в правилах полей реальным данным в бэкенде. Задумывался он в качестве универсального формата описания правил детектирования, основанного на данных из логов
 
-### Анализировать -- TIP
+## Средства распространения
 
-# Methods
+1. Форматы фидов
+    - Фиды могут распространяться, например, в стандартных форматах JSON, XML, YAML. Преимуществом таких форматов будут являться простота воспрятия, поскольку такие языки являются текстовыми. Однако, последующее использование может быть затруднительным для использования платформой TI
+    
+    - На смену стандартным форматам пришли уже известные STIX 2.0 и TAXII, которые способны быть напрямую интегрированы в TIP. Так же большим плюсом будет визуализация, формат STIX позволяет отображать данные в виде графа
 
-I will show here how to include poster elements that may be useful, such as an equation using mathjax:
+2. Источники
+    - Фиды и правила для СЗИ могут распространяться на открытых ресурсах, одними из основных являются общедоступные git-репозитории. Стоит учитывать, что качество таких данных может быть на низком уровне
+    
+    - Экспертные данные для TI, распространяемые на коммерческой основе являются более высокоуровневыми. АО "Перспективный мониторинг" предоставляет возможность получать актуальную и проверенную информацию в виде TI feeds, баз решающих правил для СЗИ и агрегированном представлении данных на TI Portal
 
-$$
-E = mc^2
-$$
+## Threat Intelligence Platform
 
-To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
+ - TI-платформа агрегирует знания об угрозах из большого числа внешних источников, нормализует их и выстраивает связи между ними. Далее она распространяет знания об угрозах на используемые средства защиты, повышая их эффективность
+ 
+    - Открытые платформы агрегации данных TI фактически являются бесплатными, но качество индикаторов компрометации, контекста о ВПО и группировках может оказаться на низком уровне. Таким образом, из-за некачественных данных, организации могут понести весомый ущерб
+    
+    - Платформы, разрабатываемые внутри IT-организации, помимо внутреннего использования могут быть распространены в качестве продукта для получения прибыли. Также коммерческие платформы обслуживают команды специалистов, с которыми можно делиться обратной связью с целью повышения качества работы продукта
+    
+## Дополнительная информация
 
-To get a better understanding of how to include features like these please refer to the {posterdown} [wiki](https://github.com/posterdown/wiki).
+1. Конверторы информации из TIP в форматы сигнатур СЗИ
+    - Преобразовывать информацию из различных форматов фидов в форматы сигнатур способны специальноразработанные скрипты
+ 
+2. Дополнительные популярные источники информации о TI
+    - Awesome-Threat-Intelligence (github.com/hslatman/awesome-threat-intelligence)
+    - TryHackMe лекторий (tryhackme.com/hacktivities) 
 
-**_Now on to the results!_**
-
-<br>
-
-# Информация
-
-Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
-
-```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
-par(mar=c(2,2,0,1))
-plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
-     col = iris$Species, pch = 19, xlab = "Sepal Length",
-     ylab = "Sepal Width")
-```
-
-Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
-
-```{r myprettycode, echo=FALSE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
-#trim whitespace
-par(mar=c(2,2,0,0))
-#plot boxplots
-boxplot(iris$Sepal.Width~iris$Species,
-        col = "#008080", 
-        border = "#0b4545",
-        ylab = "Sepal Width (cm)",
-        xlab = "Species")
-```
-
-How about a neat table of data? See, Table \@ref(tab:iristable):
-
-```{r, iristable}
-knitr::kable(
-  iris[1:8,1:5], format = "html",
-  caption = "A table made with the **knitr::kable** function.",
-  align = "c", col.names = c("Sepal <br> Length",
-                             "Sepal <br> Width",
-                             "Petal <br> Length",
-                             "Petal <br> Width",
-                             "Species"),
-  escape = FALSE)
-```
-
-# References
+3. Основные поставщики решений TI на российском рынке
+    - Kasperskiy LAB
+    - Positive Technologies
+    - R-Vision
+    - Security Vision
+    - Перспективный мониторинг
