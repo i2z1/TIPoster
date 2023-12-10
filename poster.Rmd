@@ -115,12 +115,11 @@ knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
     - Преобразовывать информацию из различных форматов фидов в форматы сигнатур способны специальноразработанные скрипты
  
 2. Дополнительные популярные источники информации о TI
-    - Awesome-Threat-Intelligence (github.com/hslatman/awesome-threat-intelligence)
-    - TryHackMe лекторий (tryhackme.com/hacktivities) 
+    - [Awesome-Threat-Intelligence](github.com/hslatman/awesome-threat-intelligence)
+    - [TryHackMe лекторий](tryhackme.com/hacktivities) 
 
 3. Основные поставщики решений TI на российском рынке
-    - Kasperskiy LAB
-    - Positive Technologies
-    - Перспективный мониторинг
-    - R-Vision
-    - Security Vision
+    - [**Kasperskiy LAB**](https://opentip.kaspersky.com/)
+    - [**Перспективный мониторинг**](http://amtip.ru/)
+    - [**R-Vision**](https://rvision.ru/products/tip)
+    - [**Security Vision**](https://www.securityvision.ru/products/tip/)
