@@ -27,7 +27,7 @@ logoleft_name: '![](https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanch
 #logoright_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main-img-right}'
 body_bgcol: "f7fafe"
 output: 
-  posterdown::posterdown_html:
+  posterdown::posterdown_betterland:
     self_contained: false
     pandoc_args: --mathjax
     highlight: espresso
