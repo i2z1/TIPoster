@@ -16,7 +16,7 @@ affiliation:
   - num: 1
     address: ИКБЦТ, РТУ МИРЭА
 font_family: 'PT Sans Caption'
-#tahoma
+#tahoma1
 primary_colour: "#778899"
 secondary_colour: "#4682B4"
 main_width: 0.5
