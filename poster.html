@@ -2,18 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-<title>Threat Intelligence</title>
-
-
-
-
-
 
 
 <!--
@@ -25,30 +16,178 @@ Font-awesome icons ie github or twitter
 <!--
 Google fonts api stuff
 -->
-<link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Rasa' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=tahoma' rel='stylesheet'>
 
-<!--
-Here are the required style attributes for css to make this poster work :)
--->
+
+
+<title>Threat Intelligence</title>
+
+
+
+
+
+
 <style>
 @page {
-size: 46in 32in;
+size: 54in 56in;
 margin: 0;
 padding: 0;
-background-color: #ffffff;
 }
 body {
-margin: 0px;
-padding: 0px;
-width: 46in;
-height: 32in;
-text-align: justify;
+margin: 0;
 font-size: 45px;
-background-color: #FFFFFF;
-color: #000000;
+width: 54in;
+height: 56in;
+padding: 0;
+text-align: justify;
+font-family: tahoma;
 }
-/* RMarkdown Class Styles */
+.poster_wrap {
+width: 54in;
+height: 56in;
+padding: 0cm;
+}
+.title_container {
+width: 54in;
+height: calc(56in * 0.15);
+overflow: hidden;
+background-color: #778899;
+border: 0 solid #4682B4;
+}
+.logo_left {
+float: left;
+width: 10%;
+height: 100%;
+background-color: #778899;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.logo_right {
+float: right;
+width: 10%;
+height: 100%;
+background-color: #778899;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.poster_title {
+text-align: center;
+position: relative;
+float: left;
+width: 80%;
+height: 100%;
+color: #FFFFFF;
+top: 50%;
+transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+}
+#title {
+font-family: tahoma;
+}
+/* unvisited link */
+a:link {
+color: #cc0000;
+}
+.mybreak {
+  break-before: column;
+}
+/* visited link */
+a:visited {
+color: #cc0000;
+}
+
+/* mouse over link */
+a:hover {
+color: #cc0000;
+}
+
+/* selected link */
+a:active {
+color: #cc0000;
+}
+.poster_body {
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 1mm;
+-moz-column-rule-width: 1mm;
+column-rule-width: 1mm;
+-webkit-column-rule-style: dashed;
+-moz-column-rule-style: dashed;
+column-rule-style: dashed;
+-webkit-column-rule-color: #778899;
+-moz-column-rule-color: #778899;
+column-rule-color: #778899;
+column-gap: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
+height: 100%;
+color: #000000
+background-color: f7fafe;
+}
+.poster_title h1 {
+font-size: 75pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_body_wrap{
+width: calc(54in + 0 + 0);
+height: calc(56in * 0.83);
+padding-top: calc(56in * 0.005);
+padding-bottom: calc(56in * 0.01);
+background-color: f7fafe;
+}
+.poster_title h3 {
+color: #4682B4;
+font-size: 50pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_title h3 > sup {
+  font-size: 35pt;
+  margin-left: 0.02em;
+}
+.poster_title h5 {
+color: #FFFFFF;
+font-size: 35pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+img {
+margin-top: 2cm;
+margin-bottom: 0;
+}
+.section {
+  padding: 0.2em;
+}
+.poster_body h1 {
+text-align: center;
+color: #FFFFFF;
+font-size: 65pt;
+border: 2mm solid #778899;
+background-color: #778899;
+border-radius: 4mm 0mm;
+margin-top: 2mm;
+margin-bottom: 2mm;
+font-weight: normal;
+}
+.poster_body h2 {
+color: #000000;
+font-size: 40pt;
+padding-left: 4mm;
+font-weight: normal;
+}
+.span {
+width: 200%;
+}
 /* center align leaflet map,
 from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
 .html-widget {
@@ -66,219 +205,71 @@ background-color: #dddddd40;
 border-radius: 4mm;
 padding: 4mm;
 width: 75%;
-margin: auto;
-margin-top: 1em;
-margin-bottom: 1em;
 /* align-items: center; */
+margin: auto;
+padding-left: 2cm;
 }
 code.sourceCode.r{
 background-color: transparent;
 font-size: 20pt;
 border-radius: 2mm;
 }
-code {
+.caption {
 font-size: 25pt;
+}
+.table caption {
+font-size: 25pt;
+padding-bottom: 3mm;
+
+}
+code {
+font-size: 1em;
 font-family: monospace;
-background-color: #00808024;
-color: #0b4545;
+background-color: #4682B424;
+color: #778899;
 padding: 1.2mm;
-line-height: 1;
 border-radius: 2mm;
+}
+.poster_title code {
+font-size: 1em;
+}
+table {
+font-size: 40px;
+margin: auto;
+border-top: 3px solid #666;
+border-bottom: 3px solid #666;
+}
+table thead th {
+border-bottom: 3px solid #ddd;
+}
+td {
+padding: 8px;
+}
+th {
+padding: 15px;
 }
 caption {
 margin-bottom: 10px;
+}
+.poster_body p {
+margin-right: 4mm;
+margin-left: 4mm;
+margin-top: 6mm;
+margin-bottom: 10mm;
+}
+.poster_body ol {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+#ul {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+.references p {
 font-size: 20pt;
-font-style: italic;
-}
-
-tbody tr:nth-child(odd) {
-    background-color: #0b454520;
-}
-.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
-  border-spacing: 0;
-  font-size: 40%;
-  border-style: none;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 1em;
-  padding-left: 1em;
-  line-height: 1em;
-}
-table {
-  margin: auto;
-}
-th {
-  padding-left: 5mm;
-  padding-right: 5mm;
-}
-.caption {
-font-size: 20pt;
-font-style: italic;
-padding-top: 0;
-}
-.references {
-font-size: 20px;
-line-height: 90%;
-}
-/* Create three unequal columns that floats next to each other */
-.column {
-float: left;
-padding: 0px;
-}
-.outer {
-width: 46in;
-height: 32in;
--webkit-column-count: 2; /* Chrome, Safari, Opera */
--moz-column-count: 2; /* Firefox */
-column-count: 2;
--webkit-column-fill: auto;
--moz-column-fill: auto;
-column-fill: auto;
--webkit-column-rule-width: 50%;
--moz-column-rule-width: 50%;
-column-rule-width: 50%;
--webkit-column-rule-style: solid;
--moz-column-rule-style: solid;
-column-rule-style: solid;
--webkit-column-rule-color: black;
--moz-column-rule-color: black;
-column-rule-color: black;
--webkit-column-gap: 50%;
-background-color: #ffffff;
-font-family: Rasa;
-color: #000000;
-}
-span.citation {
-  color: #008080;
-  font-weight: bold;
-}
-a {
-text-decoration: none;
-color: #008080;
-}
-#title {
-font-size: 125pt;
-text-align: left;
-margin: 0;
-line-height: 90%;
-border-bottom: 0;
-}
-#author {
-color: #0b4545;
-margin: 0;
-line-height: 90%;
-font-size: 1.17em;
-}
-#affiliation {
-padding-top: 1em;
-color: #00000060;
-font-style: italic;
-font-size: 25px;
-margin: 0;
-}
-sup {
-color: #cc0000;
-}
-.affiliation sup {
-font-size: 20px;
-}
-.author sup {
-font-size: 30px;
-}
-.author_extra {
-color: #008080;
-margin: 0;
-line-height: 85%;
-font-size: 35px;
-}
-.outer h1 {
-text-align: center;
-margin-top: 0.5in;
-margin-bottom: 0.5in;
-}
-.outer h2 {
-text-align: center;
-}
-.outer p {
-color: #000000;
-}
-.outer ol {
-text-align: left;
-}
-.main {
-width: calc(46in / 2);
-height: 32in;
-position: absolute;
-margin-left: calc(46in / 4);
-background-color: #0b4545;
-color: #FFFFFF90;
-font-family: Special Elite;
-background-image: linear-gradient(#0b4545 50%, #008080);
-}
-.main strong {
-color: #FFFFFF;
-}
-img.main-img-left {
-width: 20%;
-left: 0.5in;
-bottom: 0.2in;
-position: absolute;
-}
-img.main-img-right {
-width: 18%;
-right: 0.5in;
-bottom: 0.2in;
-position: absolute;
-}
-.main p {
-padding-top: 20%;
-font-size: 170px;
-text-align: left;
-}
-.fab {
-color: #00000060;
-font-size: 25px;
-}
-.twitter, i {
-color: #00000060;
-font-size: 35px;
-text-decoration: none;
-}
-a.email {
-text-decoration: none;
-color: #00000060;
-font-size: 35px;
-}
-.envelope {
-color: #00000060;
-font-size: 5px;
-text-decoration: none;
-}
-.poster_wrap {
-width: 46in;
-height: 32in;
-padding: 0cm;
-background-color: #ffffff;
-}
-span > #tab:mytable {
-  font-weight: bold;
-}
-.section {
-  padding-left: 10mm;
-  padding-right: 10mm;
-}
-.main p {
-  padding-left: 30mm;
-  padding-right: 30mm;
-}
-.main_pic {
-  width: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 .orcid img {
-  width: 3%;
+  width: 1em;
 }
 </style>
 </head>
@@ -286,109 +277,100 @@ span > #tab:mytable {
 
 
 <div class="poster_wrap">
-<div class="column outer">
-<br>
-<div class="title section">
-<h1 id="title">Threat Intelligence</h1>
-<br>
-<h3 id="author" class="author">
-
-I2z1<sup> 1, <a class="orcid" href="https://orcid.org/12345"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a></sup><br>
-
-<a class='envelope'><i class="fas fa-envelope"></i></a> <a href="mailto:i2z1@ddslab.ru" class="email">i2z1@ddslab.ru</a> <br>
-</h3>
-
-<h5 id="author_extra" class="author_extra">
-</h5>
-
-<p id="affiliation" class="affiliation">
-<sup>1</sup> ИКБЦТ, РТУ МИРЭА
-</p>
-
+<div class="title_container">
+<!-- Left Logo  -->
+<div class="logo_left">
+<img src= '<img src="https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches23rx/images/KBSP.png" class="main-img-left" />' style="width: 80%">
 </div>
+<!-- Poster Title -->
+<div class= "poster_title">
+<h1 id="title">Threat Intelligence</h1>
+<h3 id="author">I2z1<sup>1, <a class="orcid" href="https://orcid.org/12345"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a></sup>, sanches23rx<sup>1</sup></h3><br>
+<h5 id="affiliation"><sup>1</sup> ИКБЦТ, РТУ МИРЭА</h5>
+</div>
+<!-- Right Logo  -->
+<div class="logo_right">
+</div>
+</div>
+
+<div class='poster_body_wrap'>
+<div class='poster_body'>
 <div id="задачи-ti" class="section level2">
 <h2>Задачи TI</h2>
-<ol style="list-style-type: decimal">
-<li>При анализе собственной инфраструктуры и поиску IoC:
+<div id="при-анализе-собственной-инфраструктуры-и-поиску-ioc" class="section level4">
+<h4>1. При анализе собственной инфраструктуры и поиску IoC:</h4>
 <ul>
 <li>TI используется в процессе разведки и сбора данных об уязвимостях и угрозах для получения максимально возможного количества информации о злоумышленниках</li>
 <li>В качестве аналитической базы знаний для обнаружения и обработке угроз, формированию рекомендаций по реагированию</li>
-</ul></li>
-<li>Для организации работы Security Operations Center (SOC):
+</ul>
+</div>
+<div id="для-организации-работы-security-operations-center-soc" class="section level4">
+<h4>2. Для организации работы Security Operations Center (SOC):</h4>
 <ul>
 <li>Повышение качества детектов СЗИ</li>
 <li>Ускорение принятия решений при разборе инцидентов ИБ благодаря контексту</li>
 <li>Приоритизация угроз и атак в зависимости от критичности индикаторов</li>
-</ul></li>
-</ol>
+</ul>
+</div>
 </div>
 <div id="индикатор-компрометации" class="section level2">
 <h2>Индикатор компрометации</h2>
-<p>Объект или артефакт, обнаруженный в ИТ-инфраструктуре компании, наличие которого с высокой долей вероятности может свидетельствовать о готовящейся, совершающейся или уже осуществленной компьютерной атаке</p>
+<ul>
+<li><p>Объект или артефакт, обнаруженный в ИТ-инфраструктуре компании, наличие которого с высокой долей вероятности может свидетельствовать о готовящейся, совершающейся или уже осуществленной компьютерной атаке</p>
 <ul>
 <li>хэш-суммы файлов, их имена и расположение</li>
 <li>IP-адреса</li>
 <li>DNS-имена серверов в сети Интернет</li>
 <li>Конкретные URL</li>
 <li>Названия веток и ключей реестра Windows</li>
+</ul></li>
 </ul>
 </div>
 <div id="сбор-информации" class="section level2">
 <h2>Сбор информации</h2>
-<ol style="list-style-type: decimal">
-<li>Песочницы
-<ul>
-<li>Тестирование влияния ВПО и действий атакующих на специально подготовленных средах для выявления слабых точек системы</li>
-</ul></li>
-<li>Ханипоты
-<ul>
-<li>Подготовка заведомо уязвимой системы в качестве приманки для выявления инструментов и ТТР, которыми пользуются злоумышленники</li>
-</ul></li>
-<li>Анализ тематических форумов (Darknet)
-<ul>
-<li>Проникновение в закрытые источники, такие как Darknet веб-форумы для извлечения информации, которой делятся злоумышленники на “своих” ресурсах</li>
-</ul></li>
-<li>Материалы расследований
-<ul>
-<li>Обработка отчетов вендоров о проведенных расследованиях для извлечения информации об индикаторах, артефактах и ТТР атакующих. Также для определения отрасли по которой работают злоумышленники</li>
-</ul></li>
-<li>PoC
-<ul>
-<li>Уже готовые Proof of Concept материалы на известные CVE, которые можно найти в открытых источниках, например репозитории GitHub. С помощью PoC можно зафиксировать, какие параметры системы жертвы уязвимы и являются целевыми</li>
-</ul></li>
-</ol>
+<p><strong>Песочницы</strong> - тестирование влияния ВПО и действий атакующих на специально подготовленных средах для выявления слабых точек системы</p>
+<p><strong>Ханипоты</strong> - подготовка заведомо уязвимой системы в качестве приманки для выявления инструментов и ТТР, которыми пользуются злоумышленники</p>
+<p><strong>Анализ тематических форумов (Darknet)</strong> - проникновение в закрытые источники, такие как Darknet веб-форумы для извлечения информации, которой делятся злоумышленники на “своих” ресурсах</p>
+<p><strong>Материалы расследований</strong> - обработка отчетов вендоров о проведенных расследованиях для извлечения информации об индикаторах, артефактах и ТТР атакующих. Также для определения отрасли по которой работают злоумышленники</p>
+<p><strong>PoC</strong> - уже готовые Proof of Concept материалы на известные CVE, которые можно найти в открытых источниках, например репозитории GitHub. С помощью PoC можно зафиксировать, какие параметры системы жертвы уязвимы и являются целевыми</p>
 </div>
 <div id="применение-фидов" class="section level2">
 <h2>Применение фидов</h2>
-<ol style="list-style-type: decimal">
-<li>Snort
+<div id="snort" class="section level4">
+<h4>1. Snort</h4>
 <ul>
 <li>Защищает определённый сегмент локальной сети от внешних атак из интернета. Система Snort выполняет протоколирование, анализ, поиск по содержимому, а также широко используется для активного блокирования или пассивного обнаружения целого ряда нападений и зондирований</li>
-</ul></li>
-<li>YARA
+</ul>
+</div>
+<div id="yara" class="section level4">
+<h4>2. YARA</h4>
 <ul>
 <li>В роли инструмента выполняет сигнатурный анализ на основе формальных YARA-правил. В них содержатся индикаторы компрометации для разных типов вредоносного ПО. Основная их задача — определять переменные в шаблонах, найденных в образце вредоносного ПО. При полном или частичном совпадении (в зависимости от конкретного правила) этот алгоритм может быть использован для успешной идентификации ВПО</li>
-</ul></li>
-<li>SIGMA
+</ul>
+</div>
+<div id="sigma" class="section level4">
+<h4>3. SIGMA</h4>
 <ul>
 <li>“Sigma для логов — это как Snort для трафика или Yara для файлов”. Специально созданный YAML файл, в котором указывается соответсвие используемых в правилах полей реальным данным в бэкенде. Задумывался он в качестве универсального формата описания правил детектирования, основанного на данных из логов</li>
-</ul></li>
-</ol>
+</ul>
+</div>
 </div>
 <div id="средства-распространения" class="section level2">
 <h2>Средства распространения</h2>
-<ol style="list-style-type: decimal">
-<li>Форматы фидов
+<div id="форматы-фидов" class="section level4">
+<h4>1. Форматы фидов</h4>
 <ul>
 <li><p>Фиды могут распространяться, например, в стандартных форматах JSON, XML, YAML. Преимуществом таких форматов будут являться простота воспрятия, поскольку такие языки являются текстовыми. Однако, последующее использование может быть затруднительным для использования платформой TI</p></li>
 <li><p>На смену стандартным форматам пришли уже известные STIX 2.0 и TAXII, которые способны быть напрямую интегрированы в TIP. Так же большим плюсом будет визуализация, формат STIX позволяет отображать данные в виде графа</p></li>
-</ul></li>
-<li>Источники
+</ul>
+</div>
+<div id="источники" class="section level4">
+<h4>2. Источники</h4>
 <ul>
 <li><p>Фиды и правила для СЗИ могут распространяться на открытых ресурсах, одними из основных являются общедоступные git-репозитории. Стоит учитывать, что качество таких данных может быть на низком уровне</p></li>
 <li><p>Экспертные данные для TI, распространяемые на коммерческой основе являются более высокоуровневыми. АО “Перспективный мониторинг” предоставляет возможность получать актуальную и проверенную информацию в виде TI feeds, баз решающих правил для СЗИ и агрегированном представлении данных на TI Portal</p></li>
-</ul></li>
-</ol>
+</ul>
+</div>
 </div>
 <div id="threat-intelligence-platform" class="section level2">
 <h2>Threat Intelligence Platform</h2>
@@ -409,26 +391,21 @@ I2z1<sup> 1, <a class="orcid" href="https://orcid.org/12345"><img src="https://r
 </ul></li>
 <li>Дополнительные популярные источники информации о TI
 <ul>
-<li>Awesome-Threat-Intelligence (github.com/hslatman/awesome-threat-intelligence)</li>
-<li>TryHackMe лекторий (tryhackme.com/hacktivities)</li>
+<li><a href="github.com/hslatman/awesome-threat-intelligence">Awesome-Threat-Intelligence</a></li>
+<li><a href="tryhackme.com/hacktivities">TryHackMe лекторий</a></li>
 </ul></li>
 <li>Основные поставщики решений TI на российском рынке
 <ul>
-<li>Kasperskiy LAB</li>
-<li>Positive Technologies</li>
-<li>Перспективный мониторинг</li>
-<li>R-Vision</li>
-<li>Security Vision</li>
+<li><a href="https://opentip.kaspersky.com/"><strong>Kasperskiy LAB</strong></a></li>
+<li><a href="http://amtip.ru/"><strong>Перспективный мониторинг</strong></a></li>
+<li><a href="https://rvision.ru/products/tip"><strong>R-Vision</strong></a></li>
+<li><a href="https://www.securityvision.ru/products/tip/"><strong>Security Vision</strong></a></li>
 </ul></li>
 </ol>
 </div>
-
 </div>
-<div class="main">
-<p>Threat Intelligence<br><br> <img src="https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches23rx/images/MIREA_Gerb_Colour.png" class="main_pic" /></p>
-<img src="https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches23rx/images/KBSP.png" class="main-img-left" />
-
 </div>
+
 </div>
 
 
