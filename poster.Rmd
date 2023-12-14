@@ -1,6 +1,6 @@
 ---
 title: Threat Intelligence
-poster_height: "60in"
+poster_height: "62in"
 poster_width: "54in"
 author:
   - name: I2z1
