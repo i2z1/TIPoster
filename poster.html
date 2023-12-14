@@ -2,9 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Threat Intelligence</title>
+
+
+
+
+
 
 
 <!--
@@ -16,178 +25,30 @@ Font-awesome icons ie github or twitter
 <!--
 Google fonts api stuff
 -->
+<link href='https://fonts.googleapis.com/css?family=consolas' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=tahoma' rel='stylesheet'>
 
-
-
-<title>Threat Intelligence</title>
-
-
-
-
-
-
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
 <style>
 @page {
 size: 54in 56in;
 margin: 0;
 padding: 0;
+background-color: f7fafe;
 }
 body {
-margin: 0;
-font-size: 45px;
+margin: 0px;
+padding: 0px;
 width: 54in;
 height: 56in;
-padding: 0;
 text-align: justify;
-font-family: tahoma;
-}
-.poster_wrap {
-width: 54in;
-height: 56in;
-padding: 0cm;
-}
-.title_container {
-width: 54in;
-height: calc(56in * 0.15);
-overflow: hidden;
-background-color: #778899;
-border: 0 solid #4682B4;
-}
-.logo_left {
-float: left;
-width: 10%;
-height: 100%;
-background-color: #778899;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.logo_right {
-float: right;
-width: 10%;
-height: 100%;
-background-color: #778899;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.poster_title {
-text-align: center;
-position: relative;
-float: left;
-width: 80%;
-height: 100%;
-color: #FFFFFF;
-top: 50%;
-transform: translateY(-50%);
--webkit-transform: translateY(-50%);
-}
-#title {
-font-family: tahoma;
-}
-/* unvisited link */
-a:link {
-color: #cc0000;
-}
-.mybreak {
-  break-before: column;
-}
-/* visited link */
-a:visited {
-color: #cc0000;
-}
-
-/* mouse over link */
-a:hover {
-color: #cc0000;
-}
-
-/* selected link */
-a:active {
-color: #cc0000;
-}
-.poster_body {
--webkit-column-count: 3; /* Chrome, Safari, Opera */
--moz-column-count: 3; /* Firefox */
-column-count: 3;
--webkit-column-fill: auto;
--moz-column-fill: auto;
-column-fill: auto;
--webkit-column-rule-width: 1mm;
--moz-column-rule-width: 1mm;
-column-rule-width: 1mm;
--webkit-column-rule-style: dashed;
--moz-column-rule-style: dashed;
-column-rule-style: dashed;
--webkit-column-rule-color: #778899;
--moz-column-rule-color: #778899;
-column-rule-color: #778899;
-column-gap: 1em;
-padding-left: 0.5em;
-padding-right: 0.5em;
-height: 100%;
-color: #000000
+font-size: 45px;
 background-color: f7fafe;
-}
-.poster_title h1 {
-font-size: 75pt;
-margin: 0;
-border: 0;
-font-weight: normal;
-}
-.poster_body_wrap{
-width: calc(54in + 0 + 0);
-height: calc(56in * 0.83);
-padding-top: calc(56in * 0.005);
-padding-bottom: calc(56in * 0.01);
-background-color: f7fafe;
-}
-.poster_title h3 {
-color: #4682B4;
-font-size: 50pt;
-margin: 0;
-border: 0;
-font-weight: normal;
-}
-.poster_title h3 > sup {
-  font-size: 35pt;
-  margin-left: 0.02em;
-}
-.poster_title h5 {
-color: #FFFFFF;
-font-size: 35pt;
-margin: 0;
-border: 0;
-font-weight: normal;
-}
-img {
-margin-top: 2cm;
-margin-bottom: 0;
-}
-.section {
-  padding: 0.2em;
-}
-.poster_body h1 {
-text-align: center;
-color: #FFFFFF;
-font-size: 65pt;
-border: 2mm solid #778899;
-background-color: #778899;
-border-radius: 4mm 0mm;
-margin-top: 2mm;
-margin-bottom: 2mm;
-font-weight: normal;
-}
-.poster_body h2 {
 color: #000000;
-font-size: 40pt;
-padding-left: 4mm;
-font-weight: normal;
 }
-.span {
-width: 200%;
-}
+/* RMarkdown Class Styles */
 /* center align leaflet map,
 from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
 .html-widget {
@@ -205,71 +66,219 @@ background-color: #dddddd40;
 border-radius: 4mm;
 padding: 4mm;
 width: 75%;
-/* align-items: center; */
 margin: auto;
-padding-left: 2cm;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
 }
 code.sourceCode.r{
 background-color: transparent;
 font-size: 20pt;
 border-radius: 2mm;
 }
-.caption {
-font-size: 25pt;
-}
-.table caption {
-font-size: 25pt;
-padding-bottom: 3mm;
-
-}
 code {
-font-size: 1em;
+font-size: 25pt;
 font-family: monospace;
 background-color: #4682B424;
 color: #778899;
 padding: 1.2mm;
+line-height: 1;
 border-radius: 2mm;
-}
-.poster_title code {
-font-size: 1em;
-}
-table {
-font-size: 40px;
-margin: auto;
-border-top: 3px solid #666;
-border-bottom: 3px solid #666;
-}
-table thead th {
-border-bottom: 3px solid #ddd;
-}
-td {
-padding: 8px;
-}
-th {
-padding: 15px;
 }
 caption {
 margin-bottom: 10px;
-}
-.poster_body p {
-margin-right: 4mm;
-margin-left: 4mm;
-margin-top: 6mm;
-margin-bottom: 10mm;
-}
-.poster_body ol {
-margin-right: 4mm;
-margin-left: 4mm;
-}
-#ul {
-margin-right: 4mm;
-margin-left: 4mm;
-}
-.references p {
 font-size: 20pt;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #77889920;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: 20pt;
+font-style: italic;
+padding-top: 0;
+}
+.references {
+font-size: 20px;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: 54in;
+height: 56in;
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%;
+-webkit-column-rule-style: solid;
+-moz-column-rule-style: solid;
+column-rule-style: solid;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+-webkit-column-gap: 50%;
+background-color: f7fafe;
+font-family: tahoma;
+color: #000000;
+}
+span.citation {
+  color: #4682B4;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: #4682B4;
+}
+#title {
+font-size: 125pt;
+text-align: left;
+margin: 0;
+line-height: 90%;
+border-bottom: 0;
+}
+#author {
+color: #778899;
+margin: 0;
+line-height: 90%;
+font-size: 1.17em;
+}
+#affiliation {
+padding-top: 1em;
+color: #00000060;
+font-style: italic;
+font-size: 25px;
+margin: 0;
+}
+sup {
+color: #cc0000;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author sup {
+font-size: 30px;
+}
+.author_extra {
+color: #4682B4;
+margin: 0;
+line-height: 85%;
+font-size: 35px;
+}
+.outer h1 {
+text-align: center;
+margin-top: 0.5in;
+margin-bottom: 0.5in;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p {
+color: #000000;
+}
+.outer ol {
+text-align: left;
+}
+.main {
+width: calc(54in / 2);
+height: 56in;
+position: absolute;
+margin-left: calc(54in / 4);
+background-color: #778899;
+color: #FFFFFF90;
+font-family: consolas;
+background-image: linear-gradient(#778899 50%, #4682B4);
+}
+.main strong {
+color: #FFFFFF;
+}
+img.main-img-left {
+width: 20%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+img.main-img-right {
+width: 18%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+.main p {
+padding-top: 20%;
+font-size: 170px;
+text-align: left;
+}
+.fab {
+color: #00000060;
+font-size: 25px;
+}
+.twitter, i {
+color: #00000060;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #00000060;
+font-size: 35px;
+}
+.envelope {
+color: #00000060;
+font-size: 5px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 54in;
+height: 56in;
+padding: 0cm;
+background-color: f7fafe;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.section {
+  padding-left: 10mm;
+  padding-right: 10mm;
+}
+.main p {
+  padding-left: 30mm;
+  padding-right: 30mm;
+}
+.main_pic {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .orcid img {
-  width: 1em;
+  width: 3%;
 }
 </style>
 </head>
@@ -277,24 +286,29 @@ font-size: 20pt;
 
 
 <div class="poster_wrap">
-<div class="title_container">
-<!-- Left Logo  -->
-<div class="logo_left">
-<img src= '<img src="https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches23rx/images/KBSP.png" class="main-img-left" />' style="width: 80%">
-</div>
-<!-- Poster Title -->
-<div class= "poster_title">
+<div class="column outer">
+<br>
+<div class="title section">
 <h1 id="title">Threat Intelligence</h1>
-<h3 id="author">I2z1<sup>1, <a class="orcid" href="https://orcid.org/12345"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a></sup>, sanches23rx<sup>1</sup></h3><br>
-<h5 id="affiliation"><sup>1</sup> ИКБЦТ, РТУ МИРЭА</h5>
-</div>
-<!-- Right Logo  -->
-<div class="logo_right">
-</div>
-</div>
+<br>
+<h3 id="author" class="author">
 
-<div class='poster_body_wrap'>
-<div class='poster_body'>
+I2z1<sup> 1, <a class="orcid" href="https://orcid.org/12345"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a></sup><br>
+
+<a class='envelope'><i class="fas fa-envelope"></i></a> <a href="mailto:i2z1@ddslab.ru" class="email">i2z1@ddslab.ru</a> <br>
+ sanches23rx<sup> 1</sup><br>
+
+<a class='envelope'><i class="fas fa-envelope"></i></a> <a href="mailto:rudzsan@gmail.com" class="email">rudzsan@gmail.com</a> <br>
+</h3>
+
+<h5 id="author_extra" class="author_extra">
+ </h5>
+
+<p id="affiliation" class="affiliation">
+<sup>1</sup> ИКБЦТ, РТУ МИРЭА
+</p>
+
+</div>
 <div id="задачи-ti" class="section level2">
 <h2>Задачи TI</h2>
 <div id="при-анализе-собственной-инфраструктуры-и-поиску-ioc" class="section level4">
@@ -403,9 +417,13 @@ font-size: 20pt;
 </ul></li>
 </ol>
 </div>
-</div>
-</div>
 
+</div>
+<div class="main">
+<p>Threat Intelligence<br><br> <img src="https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches23rx/images/MIREA_Gerb_Colour.png" class="main_pic" /></p>
+<img src="https://raw.githubusercontent.com/Sanches23rx/TIPoster/sanches23rx/images/KBSP.png" class="main-img-left" />
+
+</div>
 </div>
 
 
