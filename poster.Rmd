@@ -10,7 +10,7 @@ affiliation:
   - num: 1
     address: ИКБЦТ, РТУ МИРЭА
 main_findings:
-  - "Make **better posters** with RMarkdown + **posterdown**."
+  - "Threat Intelligence"
   - '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main_pic}'
 logoleft_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png){.main-img-left}'
 logoright_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main-img-right}'
