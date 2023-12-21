@@ -25,4 +25,4 @@ jobs:
 
         - name: Release
           uses: softprops/action-gh-release@v1
-          if: startsWith(poster.Rmd)
+          if: startsWith(github.ref, 'refs/tags/')
