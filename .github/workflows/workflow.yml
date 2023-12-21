@@ -25,5 +25,5 @@ jobs:
 
         - uses: ncipollo/release-action@v1
           with:
-            artifacts: "poster.html"
+            artifacts: "poster.*"
             bodyFile: "README.md"
