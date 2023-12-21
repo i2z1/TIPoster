@@ -4,6 +4,8 @@ jobs:
   render:
     name: Render my document
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
         - name: Set up Git repository
           uses: actions/checkout@v2
