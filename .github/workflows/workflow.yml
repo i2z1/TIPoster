@@ -4,8 +4,6 @@ jobs:
   render:
     name: Render my document
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
         - name: Set up Git repository
           uses: actions/checkout@v2
@@ -25,7 +23,6 @@ jobs:
           run: |
             Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f)' poster.Rmd
 
-        - uses: ncipollo/release-action@v1
-          with:
-            artifacts: "poster.*"
-            bodyFile: "README.md"
+        - name: Release
+          uses: softprops/action-gh-release@v1
+          if: startsWith(poster.*)
